@@ -37,10 +37,18 @@
   }
 }
 
+.top-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0px -1px 12px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px -1px 12px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -1px 12px 0px rgba(0, 0, 0, 0.75);
+}
+
 .navbar {
   width: 58rem;
 }
-
 
 .button-mitra {
   background-color: #ffcd00;
@@ -54,7 +62,6 @@
   filter: brightness(60%);
 }
 
-
 .carousel-caption {
   /* background-color: aqua; */
   position: fixed;
@@ -62,4 +69,8 @@
   left: 50%;
   margin-top: -70px;
   margin-left: -20px;
+}
+
+.achievments {
+  height: 27em;
 }

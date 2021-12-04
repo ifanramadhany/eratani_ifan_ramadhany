@@ -13,7 +13,7 @@ export default function CarouselBanner() {
       <CCarouselItem className="carousel">
         <CImage className="d-block w-100" src={banner1} alt="" />
         <CCarouselCaption className="carousel-caption">
-          <h5 className="text-4xl mb-10">#SelaluAdaUntukPetani</h5>
+          <h5 className="font-extrabold	text-4xl mb-10">#SelaluAdaUntukPetani</h5>
           <p className="text-xl">
             Eratani adalah perusahaan startup Agri-tech yang fokus membangun
             sebuah ekosistem pertanian yang kuat dengan mendigitalisasi proses
@@ -27,7 +27,7 @@ export default function CarouselBanner() {
       <CCarouselItem className="carousel">
         <CImage className="d-block w-100" src={banner2} alt="" />
         <CCarouselCaption className="carousel-caption">
-          <h5 className="text-4xl mb-10">#MenyejahterakanPetaniIndonesia</h5>
+          <h5 className="font-extrabold text-4xl mb-10">#MenyejahterakanPetaniIndonesia</h5>
           <p className="text-xl">
             Banyak petani Indonesia yang mengalami kesulitan untuk bercocok
             tanam karena terhalang oleh modal. Eratani hadir untuk memberikan
@@ -39,7 +39,7 @@ export default function CarouselBanner() {
       <CCarouselItem className="carousel">
         <CImage className="d-block w-100" src={banner3} alt="" />
         <CCarouselCaption className="carousel-caption">
-          <h5 className="text-4xl mb-10">#BergerakDariHuluKeHilir</h5>
+          <h5 className="font-extrabold text-4xl mb-10">#BergerakDariHuluKeHilir</h5>
           <p className="text-xl">
             Berbekal teknologi, Eratani fokus mendigitalisasi ekosistem
             pertanian dari hulu, termasuk pendanaan pertanian dan pengelolaan
