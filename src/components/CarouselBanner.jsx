@@ -10,9 +10,9 @@ import { banner1, banner2, banner3 } from "../assets";
 export default function CarouselBanner() {
   return (
     <CCarousel controls indicators>
-      <CCarouselItem className="carousel">
+      <CCarouselItem className="carousel-main">
         <CImage className="d-block w-100" src={banner1} alt="" />
-        <CCarouselCaption className="carousel-caption">
+        <CCarouselCaption className="carousel-main-caption">
           <h5 className="font-extrabold	text-4xl mb-10">#SelaluAdaUntukPetani</h5>
           <p className="text-xl">
             Eratani adalah perusahaan startup Agri-tech yang fokus membangun
@@ -24,9 +24,9 @@ export default function CarouselBanner() {
           </p>
         </CCarouselCaption>
       </CCarouselItem>
-      <CCarouselItem className="carousel">
+      <CCarouselItem className="carousel-main">
         <CImage className="d-block w-100" src={banner2} alt="" />
-        <CCarouselCaption className="carousel-caption">
+        <CCarouselCaption className="carousel-main-caption">
           <h5 className="font-extrabold text-4xl mb-10">#MenyejahterakanPetaniIndonesia</h5>
           <p className="text-xl">
             Banyak petani Indonesia yang mengalami kesulitan untuk bercocok
@@ -36,9 +36,9 @@ export default function CarouselBanner() {
           </p>
         </CCarouselCaption>
       </CCarouselItem>
-      <CCarouselItem className="carousel">
+      <CCarouselItem className="carousel-main">
         <CImage className="d-block w-100" src={banner3} alt="" />
-        <CCarouselCaption className="carousel-caption">
+        <CCarouselCaption className="carousel-main-caption">
           <h5 className="font-extrabold text-4xl mb-10">#BergerakDariHuluKeHilir</h5>
           <p className="text-xl">
             Berbekal teknologi, Eratani fokus mendigitalisasi ekosistem
