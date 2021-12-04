@@ -40,7 +40,7 @@
 .top-navbar {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   box-shadow: 0px -1px 12px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px -1px 12px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px -1px 12px 0px rgba(0, 0, 0, 0.75);
@@ -50,19 +50,54 @@
   width: 58rem;
 }
 
-.button-mitra {
+.button-feature {
   background-color: #ffcd00;
+  transition: background-color 0.5s ease-out;
 }
 
-.carousel {
+.button-feature:hover {
+  background-color: #ffde5c;
+  transition: background-color 0.5s ease-out;
+}
+
+.button-mitra {
+  background-color: #ffcd00;
+  transition: background-color 0.5s ease-out;
+}
+
+.button-mitra:hover {
+  background-color: #ffde5c;
+  transition: background-color 0.5s ease-out;
+}
+
+.testimoni {
+  max-height: 320px;
+}
+
+.testimoni-caption {
+  /* background-color: aqua; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -120px;
+  margin-left: -16px;
+}
+
+
+.testi img {
+  height: 100%;
+}
+
+
+.carousel-main {
   max-height: 700px;
 }
 
-.carousel img {
+.carousel-main img {
   filter: brightness(60%);
 }
 
-.carousel-caption {
+.carousel-main-caption {
   /* background-color: aqua; */
   position: fixed;
   top: 50%;
@@ -73,4 +108,27 @@
 
 .achievments {
   height: 27em;
+}
+
+.feature {
+  width: 75%;
+}
+
+.button-detail {
+  background-color: #0f9749;
+  transition: background-color 0.5s ease-out;
+}
+
+.button-detail:hover {
+  background-color: #55bd82;
+  transition: background-color 0.5s ease-out;
+}
+
+.gmaps {
+  height: 32em;
+}
+
+.footer-eratani {
+  height: 18em;
+  background-color: #0f9749;
 }
