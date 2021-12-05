@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ItemTable } from "../components";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUsers, createNewUser } from "../store/actions/userAction";
+import {
+  fetchUsers,
+  createNewUser,
+  searchByFirstName,
+  searchByLastName,
+  searchByEmail,
+  clearAllSearch,
+} from "../store/actions/userAction";
 import {
   CModal,
   CButton,
@@ -14,13 +21,17 @@ import {
 import { eratanilogo } from "../assets";
 import { useHistory } from "react-router";
 
-
 export default function TablePage() {
   const dispatch = useDispatch();
-  const history = useHistory()
+  const history = useHistory();
   const [createUserModal, setCreateUserModal] = useState(false);
+  const [searchData, setSearchData] = useState({
+    search_first_name: "",
+    search_last_name: "",
+    search_email: "",
+  });
 
-  const toHomePage = () => history.push("/")
+  const toHomePage = () => history.push("/");
 
   const { users } = useSelector((state) => state.userState);
 
@@ -40,6 +51,14 @@ export default function TablePage() {
     gender: "",
   });
 
+  const clearAllSearchData = () => {
+    setSearchData({
+      search_first_name: "",
+      search_last_name: "",
+      search_email: "",
+    });
+  }
+
   const clearUserInputCreate = () =>
     setUserInputCreate({
       id: "",
@@ -52,8 +71,49 @@ export default function TablePage() {
   const onChangeInputCreate = (e, key) => {
     const newObj = { ...userInputCreate };
     newObj[key] = e.target.value;
-    newObj["id"] = users.length + 1;
+    newObj["id"] = users[0].id + 1;
     setUserInputCreate(newObj);
+  };
+
+  const onChangeSearchData = (e, key) => {
+    const newObj = { ...searchData };
+    newObj[key] = e.target.value;
+    setSearchData(newObj);
+  };
+
+  const searchDataByFirstName = () => {
+    // console.log(searchData.search_first_name);
+    dispatch(searchByFirstName(searchData.search_first_name));
+    setSearchData({
+      search_first_name: searchData.search_first_name,
+      search_last_name: "",
+      search_email: "",
+    });
+  };
+
+  const searchDataByLastName = () => {
+    // console.log(searchData.search_last_name);
+    dispatch(searchByLastName(searchData.search_last_name));
+    setSearchData({
+      search_first_name: "",
+      search_last_name: searchData.search_last_name,
+      search_email: "",
+    });
+  };
+
+  const searchDataByEmail = () => {
+    // console.log(searchData.search_email);
+    dispatch(searchByEmail(searchData.search_email));
+    setSearchData({
+      search_first_name: "",
+      search_last_name: "",
+      search_email: searchData.search_email,
+    });
+  };
+
+  const clearSearchHandle = () => {
+    dispatch(clearAllSearch());
+    clearAllSearchData()
   };
 
   const createUser = () => {
@@ -61,6 +121,7 @@ export default function TablePage() {
     dispatch(createNewUser(userInputCreate));
     clearUserInputCreate();
     setCreateUserModal(false);
+    clearAllSearchData()
   };
 
   return (
@@ -166,7 +227,10 @@ export default function TablePage() {
       <div className="flex justify-center items-center">
         <div className="table-new">
           <div className="w-full h-12 flex justify-between items-center">
-            <button className="button-detail h-9 text-sm px-8 font-medium flex justify-center items-center">
+            <button
+              className="button-detail h-9 text-sm px-8 font-medium flex justify-center items-center"
+              onClick={clearSearchHandle}
+            >
               Clear Search
             </button>
 
@@ -207,10 +271,17 @@ export default function TablePage() {
                     <div className="flex border-2 rounded">
                       <input
                         type="text"
-                        className="px-2 py-0.5 w-32"
+                        className="px-2 py-0.5 w-32 text-gray-700"
                         placeholder="Search..."
+                        onChange={(e) =>
+                          onChangeSearchData(e, "search_first_name")
+                        }
+                        value={searchData.search_first_name}
                       ></input>
-                      <button className="flex items-center justify-center px-2 border-l">
+                      <button
+                        className="flex items-center justify-center px-2 border-l"
+                        onClick={searchDataByFirstName}
+                      >
                         <svg
                           className="w-6 h-6 text-gray-300"
                           fill="currentColor"
@@ -229,10 +300,17 @@ export default function TablePage() {
                     <div className="flex border-2 rounded">
                       <input
                         type="text"
-                        className="px-2 py-0.5 w-32"
+                        className="px-2 py-0.5 w-32 text-gray-700"
                         placeholder="Search..."
+                        onChange={(e) =>
+                          onChangeSearchData(e, "search_last_name")
+                        }
+                        value={searchData.search_last_name}
                       ></input>
-                      <button className="flex items-center justify-center px-2 border-l">
+                      <button
+                        className="flex items-center justify-center px-2 border-l"
+                        onClick={searchDataByLastName}
+                      >
                         <svg
                           className="w-6 h-6 text-gray-300"
                           fill="currentColor"
@@ -251,10 +329,15 @@ export default function TablePage() {
                     <div className="flex border-2 rounded">
                       <input
                         type="text"
-                        className="px-2 py-0.5 w-48"
+                        className="px-2 py-0.5 w-48 text-gray-700"
                         placeholder="Search..."
+                        onChange={(e) => onChangeSearchData(e, "search_email")}
+                        value={searchData.search_email}
                       ></input>
-                      <button className="flex items-center justify-center px-2 border-l">
+                      <button
+                        className="flex items-center justify-center px-2 border-l"
+                        onClick={searchDataByEmail}
+                      >
                         <svg
                           className="w-6 h-6 text-gray-300"
                           fill="currentColor"
@@ -278,7 +361,7 @@ export default function TablePage() {
             <tbody>
               {/* item table  */}
               {userSorting.map((item) => (
-                <ItemTable key={item.id} item={item}></ItemTable>
+                <ItemTable key={item.id} item={item} clearAllSearchData={clearAllSearchData}></ItemTable>
               ))}
             </tbody>
           </table>

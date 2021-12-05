@@ -6,12 +6,14 @@ import {
   CCarouselCaption,
 } from "@coreui/react";
 import { banner1, banner2, banner3 } from "../assets";
+import "@coreui/coreui/dist/css/coreui.min.css";
+
 
 export default function CarouselBanner() {
   return (
     <CCarousel controls indicators>
       <CCarouselItem className="carousel-main">
-        <CImage className="d-block w-100" src={banner1} alt="" />
+        <CImage className="w-100" src={banner1} alt="" />
         <CCarouselCaption className="carousel-main-caption">
           <h5 className="font-extrabold	text-4xl mb-10">#SelaluAdaUntukPetani</h5>
           <p className="text-xl">
@@ -25,7 +27,7 @@ export default function CarouselBanner() {
         </CCarouselCaption>
       </CCarouselItem>
       <CCarouselItem className="carousel-main">
-        <CImage className="d-block w-100" src={banner2} alt="" />
+        <CImage className="w-100" src={banner2} alt="" />
         <CCarouselCaption className="carousel-main-caption">
           <h5 className="font-extrabold text-4xl mb-10">#MenyejahterakanPetaniIndonesia</h5>
           <p className="text-xl">
@@ -37,7 +39,7 @@ export default function CarouselBanner() {
         </CCarouselCaption>
       </CCarouselItem>
       <CCarouselItem className="carousel-main">
-        <CImage className="d-block w-100" src={banner3} alt="" />
+        <CImage className="w-100" src={banner3} alt="" />
         <CCarouselCaption className="carousel-main-caption">
           <h5 className="font-extrabold text-4xl mb-10">#BergerakDariHuluKeHilir</h5>
           <p className="text-xl">

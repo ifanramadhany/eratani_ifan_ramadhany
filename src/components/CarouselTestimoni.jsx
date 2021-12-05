@@ -12,12 +12,14 @@ import {
   Testi3,
   Testi4,
 } from "../assets";
+import "@coreui/coreui/dist/css/coreui.min.css";
+
 
 export default function CarouselTestimoni() {
   return (
     <CCarousel className="mb-10" controls indicators dark>
         <CCarouselItem className="testimoni">
-          <CImage className="d-block w-100" src={Testimoni} alt="" />
+          <CImage className="w-100" src={Testimoni} alt="" />
           <CCarouselCaption className="testimoni-caption bg-gray-200 h-60 flex justify-center items-center">
             <div className="testi mx-2 w-1/4">
               <img src={Testi1} alt="" />
@@ -33,14 +35,14 @@ export default function CarouselTestimoni() {
                 <button className="button-feature mr-20 text-gray-700 bg-blue-400 h-10 w-32 flex justify-center items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    className="h-5 w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                   Putar Video
@@ -51,7 +53,7 @@ export default function CarouselTestimoni() {
         </CCarouselItem>
 
         <CCarouselItem className="testimoni">
-          <CImage className="d-block w-100" src={Testimoni} alt="" />
+          <CImage className="w-100" src={Testimoni} alt="" />
           <CCarouselCaption className="testimoni-caption bg-gray-200 h-60 flex justify-center items-center">
             <div className="testi mx-2 w-1/4">
               <img src={Testi2} alt="" />
@@ -69,14 +71,14 @@ export default function CarouselTestimoni() {
                 <button className="button-feature mr-20 text-gray-700 bg-blue-400 h-10 w-32 flex justify-center items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    className="h-5 w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                   Putar Video
@@ -87,7 +89,7 @@ export default function CarouselTestimoni() {
         </CCarouselItem>
 
         <CCarouselItem className="testimoni">
-          <CImage className="d-block w-100" src={Testimoni} alt="" />
+          <CImage className="w-100" src={Testimoni} alt="" />
           <CCarouselCaption className="testimoni-caption bg-gray-200 h-60 flex justify-center items-center">
             <div className="testi mx-2 w-1/4">
               <img src={Testi3} alt="" />
@@ -104,14 +106,14 @@ export default function CarouselTestimoni() {
                 <button className="button-feature mr-20 text-gray-700 bg-blue-400 h-10 w-32 flex justify-center items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    className="h-5 w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                   Putar Video
@@ -122,7 +124,7 @@ export default function CarouselTestimoni() {
         </CCarouselItem>
 
         <CCarouselItem className="testimoni">
-          <CImage className="d-block w-100" src={Testimoni} alt="" />
+          <CImage className="w-100" src={Testimoni} alt="" />
           <CCarouselCaption className="testimoni-caption bg-gray-200 h-60 flex justify-center items-center">
             <div className="testi mx-2 w-1/4">
               <img src={Testi4} alt="" />
@@ -139,14 +141,14 @@ export default function CarouselTestimoni() {
                 <button className="button-feature mr-20 text-gray-700 bg-blue-400 h-10 w-32 flex justify-center items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
+                    className="h-5 w-5"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                   Putar Video
