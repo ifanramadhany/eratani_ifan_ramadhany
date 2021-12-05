@@ -20,6 +20,8 @@ import {
 } from "@coreui/react";
 import { eratanilogo } from "../assets";
 import { useHistory } from "react-router";
+import { fetchErataniData } from "../store/actions/erataniAction";
+
 
 export default function TablePage() {
   const dispatch = useDispatch();
@@ -39,6 +41,7 @@ export default function TablePage() {
 
   useEffect(() => {
     dispatch(fetchUsers());
+    dispatch(fetchErataniData())
   }, [dispatch]);
 
   // console.log(users);
