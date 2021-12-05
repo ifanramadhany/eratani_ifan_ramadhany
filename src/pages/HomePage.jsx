@@ -20,7 +20,6 @@ import {
   tiktok,
   eratani_logo_white,
 } from "../assets";
-import "@coreui/coreui/dist/css/coreui.min.css";
 import {
   AchievmentComp,
   FeatuerComp,

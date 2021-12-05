@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
+import '@coreui/coreui/dist/css/coreui.min.css'
+
 
 ReactDOM.render(
   <Provider store={store}>

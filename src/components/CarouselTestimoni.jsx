@@ -12,7 +12,6 @@ import {
   Testi3,
   Testi4,
 } from "../assets";
-import "@coreui/coreui/dist/css/coreui.min.css";
 
 
 export default function CarouselTestimoni() {
