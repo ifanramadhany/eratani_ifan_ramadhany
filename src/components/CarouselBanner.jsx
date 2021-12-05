@@ -6,7 +6,6 @@ import {
   CCarouselCaption,
 } from "@coreui/react";
 import { banner1, banner2, banner3 } from "../assets";
-import "@coreui/coreui/dist/css/coreui.min.css";
 
 
 export default function CarouselBanner() {
