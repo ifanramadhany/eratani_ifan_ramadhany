@@ -132,3 +132,14 @@
   height: 18em;
   background-color: #0f9749;
 }
+
+.table-new {
+  width: 80%;
+}
+
+.table-head {
+  background-color: #0f9749;
+  position: sticky;
+  top: 0;
+}
+

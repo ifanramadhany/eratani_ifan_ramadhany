@@ -27,14 +27,18 @@ import {
   CarouselBanner,
   CarouselTestimoni,
 } from "../components";
+import { useHistory } from "react-router";
 import ScrollTop from "react-scrolltop-button";
 import { HiChevronUp } from "react-icons/hi";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 export default function HomePage() {
+  const history = useHistory()
+  const toTablePage = () => history.push("/table")
   const mapStyles = {
     height: "100%",
     width: "100%",
+    display: "relative"
   };
 
   const defaultCenter = {
@@ -95,6 +99,8 @@ export default function HomePage() {
         "Eratani memfasilitasi petani untuk menjual dan mendistribusikan hasil panen secara langsung dan mudah dengan harga yang terstandarisasi.",
     },
   ];
+
+  const googleApi = process.env.GOOGLE_API;
 
   return (
     <div className="h-full">
@@ -160,7 +166,7 @@ export default function HomePage() {
           </div>
 
           <div className="h-full w-40 flex justify-center items-center">
-            <button className="button-mitra h-9 text-sm px-8 font-medium flex justify-center items-center">
+            <button className="button-mitra h-9 text-sm px-8 font-medium flex justify-center items-center" onClick={toTablePage}>
               Mitra Petani
             </button>
           </div>
@@ -192,7 +198,7 @@ export default function HomePage() {
         ))}
 
         <div className="h-24 flex items-center">
-          <button className="button-detail text-white bg-blue-200 px-24 py-2.5 font-semibold">
+          <button className="button-detail text-white bg-blue-200 px-24 py-2.5 font-semibold" onClick={toTablePage}>
             Lihat Detail
           </button>
         </div>
@@ -235,7 +241,7 @@ export default function HomePage() {
 
       <div className="w-full flex justify-center items-center">
         <div className="h-24 flex items-center">
-          <button className="button-detail flex justify-center items-center text-white bg-blue-200 px-24 py-2.5 font-semibold">
+          <button className="button-detail flex justify-center items-center text-white bg-blue-200 px-24 py-2.5 font-semibold" onClick={toTablePage}>
             <img className="w-4 mx-2" src={whatsapp} alt="" />
             Hubungi Kami
           </button>
@@ -244,8 +250,8 @@ export default function HomePage() {
 
       {/* gmaps, kritik & saran  */}
       <div className="my-16 gmaps w-full flex">
-        <div className="mx-3 w-1/2">
-          <LoadScript googleMapsApiKey="AIzaSyDvU3S9Vp-oEuqaETKXkbaR6QAACzvaWY8">
+        <div className="relative mx-3 w-1/2">
+          <LoadScript googleMapsApiKey={googleApi}>
             <GoogleMap
               mapContainerStyle={mapStyles}
               zoom={13}
@@ -253,6 +259,9 @@ export default function HomePage() {
             >
               <Marker position={location} />
             </GoogleMap>
+          <button className="absolute bottom-6 left-56 button-mitra h-9 text-sm px-16 py-4 font-medium flex justify-center items-center" onClick={toTablePage}>
+            Lokasi
+          </button>
           </LoadScript>
         </div>
         <div className="mx-3 bg-gray-200 w-1/2">
@@ -289,7 +298,7 @@ export default function HomePage() {
               ></textarea>
             </div>
 
-            <button className="button-mitra h-9 text-sm px-16 py-4 font-medium flex justify-center items-center">
+            <button className="button-mitra h-9 text-sm px-16 py-4 font-medium flex justify-center items-center" onClick={toTablePage}>
               Kirim Pesan
             </button>
           </div>
@@ -361,7 +370,9 @@ export default function HomePage() {
                 />
               </svg>
               <Link className="text-yellow-400 hover:text-yellow-400">ID</Link>
-              <Link className="no-underline text-gray-100 hover:text-yellow-400">EN</Link>
+              <Link className="no-underline text-gray-100 hover:text-yellow-400">
+                EN
+              </Link>
             </div>
             <div className="flex w-full justify-between items-center">
               <img className="w-7 cursor-pointer" src={tiktok} alt="" />
