@@ -1,4 +1,4 @@
-import { GET_USERS, GET_USERS_BY_ID, CREATE_USER, DELETE_USER, EDIT_USER } from "../keys";
+import { CLEAR_SEARCH, GET_USERS, GET_USERS_BY_ID, CREATE_USER, DELETE_USER, EDIT_USER, SEARCH_FIRST_NAME, SEARCH_LAST_NAME, SEARCH_EMAIL } from "../keys";
 
 export function getUsers(payload) {
   return {
@@ -31,6 +31,33 @@ export function deleteUser(payload) {
 export function editUser(payload) {
   return {
     type: EDIT_USER,
+    payload,
+  };
+}
+
+export function clearAllSearch() {
+  return {
+    type: CLEAR_SEARCH,
+  };
+}
+
+export function searchByFirstName(payload) {
+  return {
+    type: SEARCH_FIRST_NAME,
+    payload,
+  };
+}
+
+export function searchByLastName(payload) {
+  return {
+    type: SEARCH_LAST_NAME,
+    payload,
+  };
+}
+
+export function searchByEmail(payload) {
+  return {
+    type: SEARCH_EMAIL,
     payload,
   };
 }

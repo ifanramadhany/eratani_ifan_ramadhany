@@ -3,3 +3,7 @@ export const GET_USERS_BY_ID = 'user/getUserById' // named export
 export const CREATE_USER = 'user/createUser' // named export
 export const DELETE_USER = 'user/deleteUser' // named export
 export const EDIT_USER = 'user/editUser' // named export
+export const CLEAR_SEARCH = 'user/clearSearch' // named export
+export const SEARCH_FIRST_NAME = 'user/searchByFirstName' // named export
+export const SEARCH_LAST_NAME = 'user/searchByLastName' // named export
+export const SEARCH_EMAIL = 'user/searchByEmail' // named export

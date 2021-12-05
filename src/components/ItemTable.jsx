@@ -12,7 +12,7 @@ import { useDispatch } from "react-redux";
 import { deleteUser, editUser } from "../store/actions/userAction";
 
 
-export default function ItemTable({ item }) {
+export default function ItemTable({ item, clearAllSearchData }) {
   const dispatch = useDispatch();
 
   const [deleteUserModal, setDeleteUserModal] = useState(false);
@@ -37,12 +37,14 @@ export default function ItemTable({ item }) {
     // console.log(item.id);
     dispatch(deleteUser(item.id))
     setDeleteUserModal(false)
+    clearAllSearchData()
   }
 
   const editUserHandle = () => {
     // console.log(userInputEdit);
     dispatch(editUser(userInputEdit))
     setEditUserModal(false);
+    clearAllSearchData()
   };
 
   return (
